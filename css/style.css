@@ -15,7 +15,8 @@ border-radius: 50%;
 
 .redChip {
     background-image:url(/assets/redChip.png) ;
-    background-size: 100%;
+    background-size: 145%;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
