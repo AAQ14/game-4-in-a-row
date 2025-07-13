@@ -1,3 +1,10 @@
+body {
+/* text-align: center; */
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .blocker{
     width: 250px;
     height: 247px;
@@ -15,13 +22,14 @@ border-radius: 50%;
 
 .redChip {
     background-image:url(/assets/redChip.png) ;
-    background-size: 145%;
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .yellowChip {
     background-image: url(/assets/yellowChip.png);
-    background-size: 100%;
+    background-size: 110%;
+    background-position: center;
     background-repeat: no-repeat;
 }
