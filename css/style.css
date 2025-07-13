@@ -29,9 +29,10 @@ body {
   animation-duration: 0.8s;
 }
 
+
 @keyframes MOVE {
   from {
-    transform: translateY(-300%);
+    transform: translateY(-250%);
   }
   to {
     transform: translateY(0);
