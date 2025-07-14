@@ -35,7 +35,7 @@ body {
 
 @keyframes MOVE {
   from {
-    transform: translateY(-250%);
+    transform: translateY(-800%);
   }
   to {
     transform: translateY(0);
@@ -48,6 +48,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   animation-name: MOVE;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   z-index: -1;
 }
