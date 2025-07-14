@@ -12,6 +12,11 @@
 //implementing the css
 //increase the size of the blocker array✔
 //problem: if win is true than stop playing
+//problem2: if I win and clicked reset again the win condition not working again
+//problem3: Reset element after the blocker on the bottom\
+//problem 4: cir problem again
+//problem 5: let the name of the game be fixed
+//problem 56: drop chips problem
 
 
 
@@ -128,8 +133,6 @@ function displayMessage() {
             parElm.textContent = "congratulation! red player wins:)"
     } else if (tie === true) {
         parElm.textContent = "it's a tie! try again:)"
-    }else {
-        parElm.textContent = "enjoy the game"
     }
 }
 
@@ -143,7 +146,7 @@ function reset() {
     removeChip(column7)
     removeChip(column8)
     win = false
-     parElm.textContent = "enjoy the game"
+     parElm.textContent = "Enjoy the game😊"
 }
 
 function removeChip(col) {

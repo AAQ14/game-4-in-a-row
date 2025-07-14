@@ -67,12 +67,13 @@ body {
 }
 
 h1{
-  
+  position: sticky;
   font-family: "Tiny5", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
   color: #333446;
+  
 }
 
 button{
@@ -94,6 +95,6 @@ button:hover {
 p{
   font-family: "Tiny5", sans-serif;
   font-size: 50px;
-  color: #8e7da1;
+  color:#B8001F;
   margin: 0px;
 }
