@@ -68,6 +68,10 @@ const column1 = Array.from(document.querySelectorAll('.column1'))
 const column2 = Array.from(document.querySelectorAll('.column2'))
 const column3 = Array.from(document.querySelectorAll('.column3'))
 const column4 = Array.from(document.querySelectorAll('.column4'))
+const column5 = Array.from(document.querySelectorAll('.column5'))
+const column6 = Array.from(document.querySelectorAll('.column6'))
+const column7 = Array.from(document.querySelectorAll('.column7'))
+const column8 = Array.from(document.querySelectorAll('.column8'))
 const blockerelm = document.querySelector('.blocker')
 const parElm = document.querySelector('.message')
 
@@ -75,7 +79,7 @@ const parElm = document.querySelector('.message')
 /*-------------------------------- Functions --------------------------------*/
 function play(column) {
 
-    for (let i = 3; i <= column.length; i--) {
+    for (let i = 7; i <= column.length; i--) {
         if (column[i].innerHTML === '') {
             if (turn % 2 === 0) {
                 console.log(i)
@@ -158,3 +162,36 @@ column4.forEach((item) => {
         displayMeassge()
     })
 })
+column5.forEach((item) => {
+    item.addEventListener('click', event => {
+        console.log("column 5 clicked")
+        play(column5)
+        win()
+        displayMeassge()
+    })
+})
+column6.forEach((item) => {
+    item.addEventListener('click', event => {
+        console.log("column 6 clicked")
+        play(column6)
+        win()
+        displayMeassge()
+    })
+})
+column7.forEach((item) => {
+    item.addEventListener('click', event => {
+        console.log("column 7 clicked")
+        play(column7)
+        win()
+        displayMeassge()
+    })
+})
+column8.forEach((item) => {
+    item.addEventListener('click', event => {
+        console.log("column 8 clicked")
+        play(column8)
+        win()
+        displayMeassge()
+    })
+})
+
