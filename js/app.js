@@ -123,7 +123,6 @@ function win() {
             return playerWin = true
             
         } else if (blocker.every((block) => block != "")) {
-            alert("tie")
             return tie = true
         }
 
