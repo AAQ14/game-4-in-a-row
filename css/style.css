@@ -25,6 +25,7 @@ body {
   z-index: 1;
   justify-content: center;
   gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .cir {
@@ -80,6 +81,7 @@ button{
   border-radius: 8px;
   padding: 10px 26px;
   font-size: 30px;
+  margin: 20px 0;
   font-family: "Tiny5", sans-serif;
     background-color: #7F8CAA;
   color:  white;

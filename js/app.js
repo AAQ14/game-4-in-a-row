@@ -11,12 +11,13 @@
 //implement reset button✔
 //implementing the css
 //increase the size of the blocker array✔
-//problem: if win is true than stop playing
-//problem2: if I win and clicked reset again the win condition not working again
-//problem3: Reset element after the blocker on the bottom\
+//problem: if win is true than stop playing ✔
+//problem2: if I win and clicked reset again the win condition not working again ✔
+//problem3: Reset element after the blocker on the bottom\ ✔
 //problem 4: cir problem again
-//problem 5: let the name of the game be fixed
-//problem 56: drop chips problem
+//problem 5: let the name of the game(h1) be sticky
+//problem 6: drop chips problem- background
+//problem7: tie condition ✔
 
 
 
@@ -80,7 +81,7 @@ const column7 = Array.from(document.querySelectorAll('.column7'))
 const column8 = Array.from(document.querySelectorAll('.column8'))
 const blockerelm = Array.from(document.querySelectorAll('.blocker'))
 const parElm = document.querySelector('.message')
-const resetElm = document.querySelector('.reset')
+const resetElm = document.querySelector('.restart')
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -112,33 +113,37 @@ function play(column) {
 
 //win condition is true if the chips match one the winning combos arrays
 function win() {
+    console.log("In win")
     winningCombos.forEach(combo => {
         if (blocker[combo[0]] === blocker[combo[1]] && blocker[combo[0]] === blocker[combo[2]] && blocker[combo[0]] === blocker[combo[3]] &&
             blocker[combo[1]] === blocker[combo[2]] && blocker[combo[1]] === blocker[combo[3]] &&
             blocker[combo[2]] === blocker[combo[3]] && blocker[combo[0]] !== '' && blocker[combo[1]] !== '' && blocker[combo[2]] !== '' && blocker[combo[3]] !== '') {
             alert("win!")
+
+
             return playerWin = true
+            
         } else if (blocker.every((block) => block != "")) {
+            alert("tie")
             return tie = true
         }
 
     })
 }
-
 function displayMessage() {
     if (playerWin === true) {
-        if (turn % 2 === 0)
-        {
-             parElm.style.color = "#DDA853";
-             parElm.textContent = "congratulation! yellow player wins🥳👏"
+        if (turn % 2 === 0) {
+            parElm.style.color = "#DDA853";
+            parElm.textContent = "congratulation! yellow player wins🥳👏"
         }
-            
+
         else if (turn % 2 === 1) {
-             parElm.style.color = "#B8001F";
+            parElm.style.color = "#B8001F";
             parElm.textContent = "congratulation! red player wins🥳👏"
         }
     } else if (tie === true) {
-        parElm.textContent = "it's a tie! try again:)"
+        parElm.style.color = "#7F8CAA";
+        parElm.textContent = "it's a tie! try again:)😊"
     }
 }
 
@@ -151,8 +156,12 @@ function reset() {
     removeChip(column6)
     removeChip(column7)
     removeChip(column8)
-    win = false
+    playerWin = false
+    parElm.style.color = "#BA487F";
     parElm.textContent = "Enjoy the game😊"
+    blocker =  ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+
 }
 
 function removeChip(col) {
@@ -168,66 +177,83 @@ function removeChip(col) {
 /*----------------------------- Event Listeners -----------------------------*/
 column1.forEach((item) => {
     item.addEventListener('click', event => {
+        if(!playerWin){
         console.log("column1 clicked")
         play(column1)
         win()
         displayMessage()
+        }
+       
     })
 })
 column2.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column2 clicked")
         play(column2)
         win()
         displayMessage()
+         }
     })
 })
 column3.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 3 clicked")
         play(column3)
         win()
         displayMessage()
+         }
     })
 })
 column4.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 4 clicked")
         play(column4)
         win()
         displayMessage()
+         }
     })
 })
 column5.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 5 clicked")
         play(column5)
         win()
         displayMessage()
+         }
     })
 })
 column6.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 6 clicked")
         play(column6)
         win()
         displayMessage()
+         }
     })
 })
 column7.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 7 clicked")
         play(column7)
         win()
         displayMessage()
+         }
     })
 })
 column8.forEach((item) => {
     item.addEventListener('click', event => {
+         if(!playerWin){
         console.log("column 8 clicked")
         play(column8)
         win()
         displayMessage()
+         }
     })
 })
 
