@@ -128,9 +128,15 @@ function win() {
 function displayMessage() {
     if (playerWin === true) {
         if (turn % 2 === 0)
-            parElm.textContent = "congratulation! yellow player wins:)"
-        else if (turn % 2 === 1)
-            parElm.textContent = "congratulation! red player wins:)"
+        {
+             parElm.style.color = "#DDA853";
+             parElm.textContent = "congratulation! yellow player wins🥳👏"
+        }
+            
+        else if (turn % 2 === 1) {
+             parElm.style.color = "#B8001F";
+            parElm.textContent = "congratulation! red player wins🥳👏"
+        }
     } else if (tie === true) {
         parElm.textContent = "it's a tie! try again:)"
     }
@@ -146,7 +152,7 @@ function reset() {
     removeChip(column7)
     removeChip(column8)
     win = false
-     parElm.textContent = "Enjoy the game😊"
+    parElm.textContent = "Enjoy the game😊"
 }
 
 function removeChip(col) {
@@ -156,7 +162,7 @@ function removeChip(col) {
             col[i].classList.remove('yellowChip')
         else if (col[i]?.classList?.contains('redChip'))
             col[i].classList.remove('redChip')
-        
+
     }
 }
 /*----------------------------- Event Listeners -----------------------------*/
