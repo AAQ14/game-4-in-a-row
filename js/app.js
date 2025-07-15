@@ -14,9 +14,8 @@
 //problem: if win is true than stop playing ✔
 //problem2: if I win and clicked reset again the win condition not working again ✔
 //problem3: Reset element after the blocker on the bottom\ ✔
-//problem 4: cir problem again
+//problem 4: drop chips problem- background
 //problem 5: let the name of the game(h1) be sticky
-//problem 6: drop chips problem- background
 //problem7: tie condition ✔
 
 
@@ -118,7 +117,7 @@ function win() {
         if (blocker[combo[0]] === blocker[combo[1]] && blocker[combo[0]] === blocker[combo[2]] && blocker[combo[0]] === blocker[combo[3]] &&
             blocker[combo[1]] === blocker[combo[2]] && blocker[combo[1]] === blocker[combo[3]] &&
             blocker[combo[2]] === blocker[combo[3]] && blocker[combo[0]] !== '' && blocker[combo[1]] !== '' && blocker[combo[2]] !== '' && blocker[combo[3]] !== '') {
-            alert("win!")
+            // alert("win!")
 
 
             return playerWin = true
