@@ -10,10 +10,10 @@
 //implement if the game a tie ✔
 //implement reset button✔
 //implementing the css
-//increase the size of the blocker array✔
+//increase the size of the board array✔
 //problem: if win is true than stop playing ✔
 //problem2: if I win and clicked reset again the win condition not working again ✔
-//problem3: Reset element after the blocker on the bottom\ ✔
+//problem3: Reset element after the board on the bottom\ ✔
 //problem 4: drop chips problem- background
 //problem 5: let the name of the game(h1) be sticky
 //problem7: tie condition ✔
@@ -62,7 +62,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 let turn = 0
-let blocker = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+let board = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 let playerWin = false
 let tie = false
@@ -78,7 +78,7 @@ const column5 = Array.from(document.querySelectorAll('.column5'))
 const column6 = Array.from(document.querySelectorAll('.column6'))
 const column7 = Array.from(document.querySelectorAll('.column7'))
 const column8 = Array.from(document.querySelectorAll('.column8'))
-const blockerelm = Array.from(document.querySelectorAll('.blocker'))
+const boardelm = Array.from(document.querySelectorAll('.board'))
 const parElm = document.querySelector('.message')
 const resetElm = document.querySelector('.restart')
 
@@ -89,21 +89,15 @@ function play(column) {
     for (let i = 7; i <= column.length; i--) {
         if (!column[i].classList.contains('redChip') && !column[i].classList.contains('yellowChip')) {
             if (turn % 2 === 0) {
-                console.log(i)
                 column[i].classList.add('redChip')
                 turn++
-                blocker[Number(column[i].id)] = "red"
-                // column[i].innerHTML = 'red'
-                console.log(column)
-                // console.log(blocker)
+                board[Number(column[i].id)] = "red"
                 return
             }
             else {
                 column[i].classList.add('yellowChip')
                 turn++
-                blocker[Number(column[i].id)] = "yellow"
-                // column[i].innerHTML = 'yellow'
-                console.log(blocker)
+                board[Number(column[i].id)] = "yellow"
                 return
             }
         }
@@ -114,15 +108,15 @@ function play(column) {
 function win() {
     console.log("In win")
     winningCombos.forEach(combo => {
-        if (blocker[combo[0]] === blocker[combo[1]] && blocker[combo[0]] === blocker[combo[2]] && blocker[combo[0]] === blocker[combo[3]] &&
-            blocker[combo[1]] === blocker[combo[2]] && blocker[combo[1]] === blocker[combo[3]] &&
-            blocker[combo[2]] === blocker[combo[3]] && blocker[combo[0]] !== '' && blocker[combo[1]] !== '' && blocker[combo[2]] !== '' && blocker[combo[3]] !== '') {
+        if (board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]] && board[combo[0]] === board[combo[3]] &&
+            board[combo[1]] === board[combo[2]] && board[combo[1]] === board[combo[3]] &&
+            board[combo[2]] === board[combo[3]] && board[combo[0]] !== '' && board[combo[1]] !== '' && board[combo[2]] !== '' && board[combo[3]] !== '') {
             // alert("win!")
 
 
             return playerWin = true
             
-        } else if (blocker.every((block) => block != "")) {
+        } else if (board.every((block) => block != "")) {
             return tie = true
         }
 
@@ -157,7 +151,7 @@ function reset() {
     playerWin = false
     parElm.style.color = "#BA487F";
     parElm.textContent = "Enjoy the game😊"
-    blocker =  ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    board =  ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 }
