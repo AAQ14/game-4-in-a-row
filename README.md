@@ -154,7 +154,7 @@ function displayMessage() {
 As well for tie, if all the divs on the board has filled and no winner the true will be assigned to the tie variable. As it shown in the above win() function if all the if it doesn't return win equal true and the array of the board is full than tie will be equal to true and display the appropriate message.
 
 # Future work
-I to add an option for the player to play with the computer. Also, I want the game have multi levels.
+I want to add an option for the player to play with the computer. Also, I want the game have multi levels.
 
 # Conclusion
 This game have many challenges, I enjoyed solving the problems and it was so fun to create this game. As well as I learned new things in CSS dring the development. 
