@@ -112,4 +112,45 @@ const winningCombos = [
 ]
 ```
 ## win
-Initialized a variable playerWin to false and whenver the chips 
+Initialized a variable playerWin to false and whenver yellow or red chips match one of the winnning arrays then change the the playerWin variable to true and display the appropriate message.
+```javascript
+function win() {
+    console.log("In win")
+    winningCombos.forEach(combo => {
+        if (board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]] && board[combo[0]] === board[combo[3]] &&
+            board[combo[1]] === board[combo[2]] && board[combo[1]] === board[combo[3]] &&
+            board[combo[2]] === board[combo[3]] && board[combo[0]] !== '' && board[combo[1]] !== '' && board[combo[2]] !== '' && board[combo[3]] !== '') {
+            // alert("win!")
+
+
+            return playerWin = true
+            
+        } else if (board.every((cir) => cir != "")) {
+            return tie = true
+        }
+
+    })
+}
+function displayMessage() {
+    if (playerWin === true) {
+        if (turn % 2 === 0) {
+            parElm.style.color = "#DDA853";
+            parElm.textContent = "congratulation! yellow player wins🥳👏"
+        }
+
+        else if (turn % 2 === 1) {
+            parElm.style.color = "#B8001F";
+            parElm.textContent = "congratulation! red player wins🥳👏"
+        }
+    } else if (tie === true) {
+        parElm.style.color = "#7F8CAA";
+        parElm.textContent = "it's a tie! try again:)😊"
+    }
+}
+
+```
+## tie
+As well for tie, if all the divs on the board has filled and no winner the true will be assigned to the tie variable. As it shown in the above win() function if all the if it doesn't return win equal true and the array of the board is full than tie will be equal to true and display the appropriate message.
+
+# Conclusion
+This game have many challenges, I enjoyed solving the problems and it was so fun to create this game. As well as I learned new things in CSS dring the development.
