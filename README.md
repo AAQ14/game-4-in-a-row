@@ -33,6 +33,7 @@ Four in a row is two-player gamethat challenges the player to connect four dropp
 
 # Attributions
 * The chips images used were cropped from https://www.ebay.com.au/itm/267085710737.
+* Color Palletes https://colorhunt.co/.
 
 # Game Mechanics
 ## Drop Chip
