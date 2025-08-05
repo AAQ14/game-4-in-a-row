@@ -157,4 +157,4 @@ As well for tie, if all the divs on the board has filled and no winner the true 
 I want to add an option for the player to play with AI. Also, I want the game have multi levels.
 
 # Conclusion
-This game have many challenges, I enjoyed solving the problems and it was so fun to create this game. As well as I learned new things in CSS dring the development. 
+This game have many challenges, I enjoyed solving the problems and it was so fun to create this game. As well as I learned new things in CSS during the development. 
